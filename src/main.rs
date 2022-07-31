@@ -1,4 +1,5 @@
 use clap::Parser;
+use std::io;
 use tree::Tree;
 mod tree;
 
@@ -8,8 +9,8 @@ struct Cli {
     path: std::path::PathBuf,
 }
 
-fn main() {
+fn main() -> io::Result<()> {
     let cli = Cli::parse();
     let tree = Tree::new(cli.path).expect("Make sure that the path exists and is a directory");
-    tree.tree();
+    tree.tree(&mut std::io::stdout())
 }
