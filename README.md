@@ -11,7 +11,12 @@ cargo build --release
 
 3. Execute the executable created
 ```console
-.\target\release\tree "."
+.\target\release\tree "src"
+```
+Output
+```console
+|-main.rs
+|-tree.rs
 ```
 
 ## Copyrights & License
